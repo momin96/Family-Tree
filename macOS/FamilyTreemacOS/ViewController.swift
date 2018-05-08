@@ -28,6 +28,16 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
                 self.familyTableView.reloadData()
             })
         }
+        
+        
+        let sortByName = NSSortDescriptor(key: "name", ascending: true)
+        let sortByAge = NSSortDescriptor(key: "age", ascending: true)
+        familyTableView.tableColumns[0].sortDescriptorPrototype = sortByName
+        familyTableView.tableColumns[1].sortDescriptorPrototype = sortByAge
+        
+        familyTableView.sortDescriptors = [sortByName, sortByAge]
+        
+        
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -54,7 +64,25 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         return nil
     }
-
+    
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+        
+        if tableView.selectedColumn == 0 {
+            let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: (oldDescriptors.first?.ascending)!)
+            reloadTableViewWith(children: (sortedChildren)!)
+        }
+        else if tableView.selectedColumn == 1 {
+            let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: (oldDescriptors.first?.ascending)!)
+            reloadTableViewWith(children: (sortedChildren)!)
+        }
+    }
+    
+    func reloadTableViewWith(children cd : [Member]) {
+        self.family?.updateChildren(cd)
+        self.familyTableView.reloadData()
+    }
+    
+    // MARK: Target Action Methods
     @IBAction func sortChildrenByName(_ sender : NSButton) {
       
         let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
