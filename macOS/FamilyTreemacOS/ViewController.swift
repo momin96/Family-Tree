@@ -30,8 +30,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         }
         
         
-        let sortByName = NSSortDescriptor(key: "name", ascending: true)
-        let sortByAge = NSSortDescriptor(key: "age", ascending: true)
+        let sortByName = NSSortDescriptor(key: "name", ascending: SortStatus.byName)
+        let sortByAge = NSSortDescriptor(key: "age", ascending: SortStatus.byAge)
         familyTableView.tableColumns[0].sortDescriptorPrototype = sortByName
         familyTableView.tableColumns[1].sortDescriptorPrototype = sortByAge
         
