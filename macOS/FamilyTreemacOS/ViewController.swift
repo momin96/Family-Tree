@@ -68,7 +68,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
         
         if tableView.selectedColumn == 0 {
-            let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: (oldDescriptors.first?.ascending)!)
+            let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: !(oldDescriptors.first?.ascending)!)
             reloadTableViewWith(children: (sortedChildren)!)
         }
         else if tableView.selectedColumn == 1 {
