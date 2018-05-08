@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:macOSFamilyTreeAssignment/FamilyTreemacOS/FamilyTreemacOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iOSFamilityTreeAssignment/Family Tree iOS/Family Tree iOS.xcodeproj">
+   </FileRef>
+</Workspace>
