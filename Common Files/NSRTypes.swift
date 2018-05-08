@@ -8,15 +8,29 @@
 
 import Foundation
 
+// This swift file is going to keep globally used types through out app
+
+
+/// Here it maintains most of keys for storage property to be used inside swift's extension.
 struct Associatekeys {
     static var toggleState : UInt8 = 0
 }
 
+/// An insance who confirms this protocol will implemented On & Off state
 protocol ToggleProtocol {
     func toggle()
 }
 
+/// enum to state On & Off state of an instance
 enum ToggleState {
     case ON
     case OFF
 }
+
+/// hold default value to sorting
+struct SortStatus {
+    static var byName: Bool = true
+    static var byAge: Bool = true
+}
+
+
