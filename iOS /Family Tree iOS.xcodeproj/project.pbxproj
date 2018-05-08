@@ -11,6 +11,8 @@
 		0E6FAE4920A19047008D075F /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4520A19047008D075F /* NSRDataFetcher.swift */; };
 		0E6FAE4A20A19047008D075F /* NSRTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4620A19047008D075F /* NSRTypes.swift */; };
 		0E6FAE4B20A19047008D075F /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4720A19047008D075F /* NSRDataConstructor.swift */; };
+		0E6FAE5520A1BFA3008D075F /* NSRTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE5420A1BFA3008D075F /* NSRTableHeaderView.swift */; };
+		0E6FAE5720A1BFBF008D075F /* NSRTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6FAE5620A1BFBF008D075F /* NSRTableHeaderView.xib */; };
 		0E792F2D20A0183400152C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F2C20A0183400152C94 /* AppDelegate.swift */; };
 		0E792F3220A0183400152C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3020A0183400152C94 /* Main.storyboard */; };
 		0E792F3420A0183400152C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3320A0183400152C94 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		0E6FAE4520A19047008D075F /* NSRDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRDataFetcher.swift; sourceTree = "<group>"; };
 		0E6FAE4620A19047008D075F /* NSRTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRTypes.swift; sourceTree = "<group>"; };
 		0E6FAE4720A19047008D075F /* NSRDataConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRDataConstructor.swift; sourceTree = "<group>"; };
+		0E6FAE5420A1BFA3008D075F /* NSRTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRTableHeaderView.swift; sourceTree = "<group>"; };
+		0E6FAE5620A1BFBF008D075F /* NSRTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NSRTableHeaderView.xib; sourceTree = "<group>"; };
 		0E792F2920A0183400152C94 /* Family Tree iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Tree iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E792F2C20A0183400152C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E792F3120A0183400152C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				0E792F2C20A0183400152C94 /* AppDelegate.swift */,
 				0E792F3020A0183400152C94 /* Main.storyboard */,
 				0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */,
+				0E6FAE5420A1BFA3008D075F /* NSRTableHeaderView.swift */,
+				0E6FAE5620A1BFBF008D075F /* NSRTableHeaderView.xib */,
 				0E792F5B20A02DD300152C94 /* NSRExtensions.swift */,
 				0E792F3320A0183400152C94 /* Assets.xcassets */,
 				0E792F3520A0183400152C94 /* LaunchScreen.storyboard */,
@@ -207,6 +213,7 @@
 			files = (
 				0E792F3720A0183400152C94 /* LaunchScreen.storyboard in Resources */,
 				0E792F3420A0183400152C94 /* Assets.xcassets in Resources */,
+				0E6FAE5720A1BFBF008D075F /* NSRTableHeaderView.xib in Resources */,
 				0E792F3220A0183400152C94 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +234,7 @@
 			files = (
 				0E6FAE4820A19047008D075F /* NSRFamily.swift in Sources */,
 				0E6FAE4920A19047008D075F /* NSRDataFetcher.swift in Sources */,
+				0E6FAE5520A1BFA3008D075F /* NSRTableHeaderView.swift in Sources */,
 				0E6FAE4A20A19047008D075F /* NSRTypes.swift in Sources */,
 				0E6FAE4B20A19047008D075F /* NSRDataConstructor.swift in Sources */,
 				0E792F5D20A02DD400152C94 /* NSRExtensions.swift in Sources */,
