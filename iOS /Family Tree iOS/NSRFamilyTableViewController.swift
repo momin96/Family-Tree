@@ -119,12 +119,12 @@ extension NSRFamilyTableViewController {
         if let children = family?.children {
             let child = children[indexPath.row]
             if let n = child.name {
-                cell.textLabel?.text = "Name: " + (String(describing: n))
+                cell.textLabel?.text = (String(describing: n))
             }
             else {
-                cell.textLabel?.text = "Name: "
+                cell.textLabel?.text = " "
             }
-            cell.detailTextLabel?.text = "Age: " + String(describing: child.age)
+            cell.detailTextLabel?.text = String(describing: child.age)
         }
         return cell
     }
