@@ -8,6 +8,8 @@
 
 import UIKit
 
+let HEADER_NIB = "headerNib"
+
 /**
  TableViewController responsible for asking data from model layer & then displaying Family member's data in View layer.
  
@@ -36,12 +38,15 @@ class NSRFamilyTableViewController: UITableViewController {
         
         initiateFamilyDataConstruction()
     
+        registerHeaderNib()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("didReceiveMemoryWarning in NSRFamilyTableViewController")
     }
+    
+    //MARK: Initial setup functions
     
     /**
      Initiates construction of family model object
@@ -54,6 +59,18 @@ class NSRFamilyTableViewController: UITableViewController {
             })
         }
     }
+    
+    
+    /**
+     Register the table view header
+     */
+    func registerHeaderNib() {
+        let headerNib = UINib.init(nibName: "NSRTableHeaderView", bundle: nil)
+//        familyTableView.register(headerNib, forCellReuseIdentifier: HEADER_NIB)
+        familyTableView.register(NSRTableHeaderView.self, forHeaderFooterViewReuseIdentifier: HEADER_NIB)
+    }
+    
+    
     
     // MARK: Target Action methods
     
@@ -128,5 +145,21 @@ extension NSRFamilyTableViewController {
         }
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        if let hdv = familyTableView.dequeueReusableHeaderFooterView(withIdentifier: HEADER_NIB) {
+//            let headerView = hdv as! NSRTableHeaderView
+//            if let f = family, let n = f.name {
+////                headerView.headerTitle.text = n
+//            }
+//            return headerView
+//        }
+//        return nil
+//    }
+//
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 50.0
+//    }
     
 }

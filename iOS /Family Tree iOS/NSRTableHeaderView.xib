@@ -13,27 +13,61 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NSRTableHeaderView" customModule="Family_Tree_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
+            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John's Family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3z-s0-Xtw">
-                    <rect key="frame" x="8" y="8" width="377" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3z-s0-Xtw">
+                    <rect key="frame" x="8" y="4" width="344" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="VXI-l7-deg"/>
+                        <constraint firstAttribute="width" constant="344" id="fgO-yE-w72"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="jEs-OK-GhL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaH-oC-HnG">
+                    <rect key="frame" x="8" y="25" width="72" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="8uW-fw-oKI"/>
+                        <constraint firstAttribute="height" constant="22" id="ZMT-au-Uiv"/>
+                    </constraints>
+                    <state key="normal" title="   Name" image="arrow_down">
+                        <color key="titleColor" red="0.23613584844559588" green="0.23613584844559588" blue="0.23613584844559588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="arrow_up"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-Jp-NSt">
+                    <rect key="frame" x="296" y="25" width="56" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="3pj-6v-0c0"/>
+                        <constraint firstAttribute="height" constant="22" id="GyU-Si-Vfa"/>
+                    </constraints>
+                    <state key="normal" title="   Age" image="arrow_down">
+                        <color key="titleColor" red="0.23510362694300513" green="0.23510362694300513" blue="0.23510362694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="arrow_up"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="M3z-s0-Xtw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="1Nf-Zo-hFS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xr9-Jp-NSt" secondAttribute="trailing" constant="8" id="1sM-j1-zs2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M3z-s0-Xtw" secondAttribute="trailing" constant="8" id="DIl-rn-qkK"/>
+                <constraint firstItem="oaH-oC-HnG" firstAttribute="top" secondItem="M3z-s0-Xtw" secondAttribute="bottom" id="Gwj-Ww-0u3"/>
                 <constraint firstItem="M3z-s0-Xtw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="LSV-ZS-jqu"/>
-                <constraint firstItem="M3z-s0-Xtw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="x6e-sk-DKU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xr9-Jp-NSt" secondAttribute="bottom" constant="3" id="swE-Vc-vCB"/>
+                <constraint firstItem="oaH-oC-HnG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="wG7-gA-BOe"/>
+                <constraint firstItem="M3z-s0-Xtw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="x6e-sk-DKU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="ageSort" destination="xr9-Jp-NSt" id="3SZ-OQ-keG"/>
+                <outlet property="headerTitle" destination="M3z-s0-Xtw" id="3y9-rU-wGF"/>
+                <outlet property="nameSort" destination="oaH-oC-HnG" id="EbF-gW-546"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="-246"/>
         </view>
         <view contentMode="scaleToFill" id="kvv-d5-7CZ" customClass="NSRHeaderButton" customModule="Family_Tree_iOS" customModuleProvider="target">
@@ -57,6 +91,7 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow_down" width="30" height="30"/>
+        <image name="arrow_down" width="10" height="10"/>
+        <image name="arrow_up" width="10" height="10"/>
     </resources>
 </document>

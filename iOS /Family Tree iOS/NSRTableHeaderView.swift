@@ -8,15 +8,17 @@
 
 import UIKit
 
-let BUTTON_HEIGHT = 40.0
+let BUTTON_HEIGHT = 45.0
 
-class NSRTableHeaderView: UIView {
+class NSRTableHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var nameSort: UIButton!
+    @IBOutlet weak var ageSort: UIButton!
+
     
-    
-    override func draw(_ rect: CGRect) {
-        
+//    override func draw(_ rect: CGRect) {
+      /*
         let nameRect: CGRect = CGRect(x: 0, y: headerTitle.bounds.height, width: self.bounds.width / 2, height: BUTTON_HEIGHT)
         let ageRect: CGRect = CGRect(x: self.bounds.width / 2, y: headerTitle.bounds.height,, width: self.bounds.width / 2, height: BUTTON_HEIGHT) as!
         
@@ -26,8 +28,8 @@ class NSRTableHeaderView: UIView {
         
         let ageButtonView = NSRHeaderButton(frame: ageRect)
         self.addSubview(ageButtonView)
-        
-    }
+        */
+//    }
 }
 
 
