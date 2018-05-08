@@ -33,20 +33,47 @@ class NSRDataConstructor: NSObject {
             if (httpResponse as! HTTPURLResponse).statusCode == 200 {
                 // Data is availalbe & status code is valid
                 
-                do {
-                    let decoder = JSONDecoder()
-                    let family = try decoder.decode(Family.self, from: data)
-                    print(family as Any)
-                    onCompletion(family)
-                }
-                catch let err {
-                    print("Error \(err)")
-                    onCompletion(nil)
-                }
+                let family = NSRDataConstructor.parseJSONfrom(data: data)
+                onCompletion(family)
             }
         }
     }
     
+    
+    /**
+     Parse JSON data using Decodable protocol in app's Family model object
+     
+     - Parameter data: Raw json data, an insance of Data
+     
+     - Returns: Family object or nil if parsing fails
+    */
+    class func parseJSONfrom(data d: Data) -> Family?{
+        do {
+            let decoder = JSONDecoder()
+            let family = try decoder.decode(Family.self, from: d)
+            let sortedFamly = NSRDataConstructor.defaultSortOn(family: family)
+            print(sortedFamly as Any)
+            return sortedFamly
+        }
+        catch let err {
+            print("Error \(err)")
+            return nil
+        }
+    }
+    
+    /**
+     Performs default sorting of family's member by their name
+     
+     - Parameter family: Family object on whose member has to be sorted.
+     
+     - Returns: Family object consist of sorted member by their name
+     */
+    class func defaultSortOn(family : Family?) -> Family? {
+        var mutableFamily = family
+        let sortedChildren = family?.sortFamilyMemberbyName(ascending: SortStatus.byName)
+        mutableFamily?.children = sortedChildren
+        return mutableFamily
+    }
 }
 
 
