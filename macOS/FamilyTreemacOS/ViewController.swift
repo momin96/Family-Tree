@@ -8,6 +8,13 @@
 
 import Cocoa
 
+/**
+ This class responsible for asking data from model layer & then displaying Family member's data in View layer.
+ 
+ Sets up table views data source & delegate
+ 
+ Sets up default sort operation by family member's name
+ */
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     /// Model object which holds the information of family that needs to dispaly on UI
@@ -33,7 +40,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
     }
     
-    //MARK: Initiate setup functions
+    //MARK: Initial setup functions
     
     /**
      Sets up data source & delegate functions for familyTableView

@@ -13,7 +13,7 @@ import UIKit
  
  Top right navigation item stack consist of two instance of UIBarButtonItem for sorting by name & age of family member
  
- - Warning: This call cannot have custom User interface as it is derived from UITableViewController
+ - Warning: This class cannot have custom User interface as it is derived from UITableViewController
  */
 class NSRFamilyTableViewController: UITableViewController {
 
