@@ -27,7 +27,7 @@ enum ToggleState {
     case OFF
 }
 
-/// hold default value to sorting
+/// Holds default value to sorting
 struct SortStatus {
     static var byName: Bool = true
     static var byAge: Bool = true

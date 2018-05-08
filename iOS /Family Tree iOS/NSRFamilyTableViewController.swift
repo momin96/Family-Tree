@@ -33,18 +33,26 @@ class NSRFamilyTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initiateFamilyDataConstruction()
+    
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("didReceiveMemoryWarning in NSRFamilyTableViewController")
+    }
+    
+    /**
+     Initiates construction of family model object
+     */
+    func initiateFamilyDataConstruction () {
         NSRDataConstructor.constructFamilyData { (family) in
             self.family = family
             OperationQueue.main.addOperation({
                 self.familyTableView.reloadData()
             })
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("didReceiveMemoryWarning in NSRFamilyTableViewController")
     }
     
     // MARK: Target Action methods
