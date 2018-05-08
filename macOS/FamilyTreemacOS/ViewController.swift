@@ -6,29 +6,47 @@
 //  Copyright © 2018 Nasir Ahmed Momin. All rights reserved.
 //
 
-let SORT_BY_NAME    = "Sort By Name"
-let SORT_BY_AGE     = "Sort By Age"
-
 import Cocoa
 
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
+    /// Model object which holds the information of family that needs to dispaly on UI
     var family : Family?
     
+    /// Outlet connection to storyboard's NSTableView
     @IBOutlet weak var familyTableView: NSTableView!
+    
+    
+    // MARK: View Life Cycle functions
+    deinit {
+        print("deinit of ViewController")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTableViewDataSourceAndDelegate()
+        
+        setDefaultSortOperationOnTableView()
+        
+        initiateFamilyDataConstruction()
+        
+    }
+    
+    //MARK: Initiate setup functions
+    
+    /**
+     Sets up data source & delegate functions for familyTableView
+    */
+    func setupTableViewDataSourceAndDelegate () {
         self.familyTableView.dataSource = self
         self.familyTableView.delegate = self
-        
-        NSRDataConstructor.constructFamilyData { (family) in
-            self.family = family
-            OperationQueue.main.addOperation({
-                self.familyTableView.reloadData()
-            })
-        }
-        
+    }
+    
+    /**
+     Sets up default sort operation on family's member's data by their names
+     */
+    func setDefaultSortOperationOnTableView () {
         
         let sortByName = NSSortDescriptor(key: "name", ascending: SortStatus.byName)
         let sortByAge = NSSortDescriptor(key: "age", ascending: SortStatus.byAge)
@@ -36,10 +54,25 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         familyTableView.tableColumns[1].sortDescriptorPrototype = sortByAge
         
         familyTableView.sortDescriptors = [sortByName, sortByAge]
-        
-        
     }
     
+    /**
+     Initiates construction of family model object
+     */
+    func initiateFamilyDataConstruction () {
+        
+        NSRDataConstructor.constructFamilyData { (family) in
+            self.family = family
+            OperationQueue.main.addOperation({
+                self.familyTableView.reloadData()
+            })
+        }
+    }
+}
+
+extension ViewController {
+    
+    // MARK: Table View's Data source & Delegate functions
     func numberOfRows(in tableView: NSTableView) -> Int {
         if let f = self.family, let c = f.children {
             return c.count
@@ -53,7 +86,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             let child = children[row]
             let name = child.name
             let age = child.age
-        
+            
             if tableColumn == tableView.tableColumns[0] {
                 return name
             }
@@ -77,10 +110,16 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         }
     }
     
+    
+    // MARK: Helper functions
+    
+    /**
+     Update family's children's order & reloads table view with latest children data
+     
+     - Parameter children: List of child whose position needs to be arranged after sorting
+     */
     func reloadTableViewWith(children cd : [Member]) {
         self.family?.updateChildren(cd)
         self.familyTableView.reloadData()
     }
-    
 }
-
