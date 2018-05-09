@@ -17,7 +17,6 @@
 		0E792F3220A0183400152C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3020A0183400152C94 /* Main.storyboard */; };
 		0E792F3420A0183400152C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3320A0183400152C94 /* Assets.xcassets */; };
 		0E792F3720A0183400152C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3520A0183400152C94 /* LaunchScreen.storyboard */; };
-		0E792F4220A0183400152C94 /* Family_Tree_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F4120A0183400152C94 /* Family_Tree_iOSTests.swift */; };
 		0E792F5320A01A2600152C94 /* NSRFamilyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */; };
 		0E792F5D20A02DD400152C94 /* NSRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5B20A02DD300152C94 /* NSRExtensions.swift */; };
 		0EA5297E20A3082700A7D876 /* NSRConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5297D20A3082700A7D876 /* NSRConnectionTest.swift */; };
@@ -51,7 +50,6 @@
 		0E792F3620A0183400152C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E792F3820A0183400152C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E792F3D20A0183400152C94 /* Family Tree iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Family Tree iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E792F4120A0183400152C94 /* Family_Tree_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family_Tree_iOSTests.swift; sourceTree = "<group>"; };
 		0E792F4320A0183400152C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRFamilyTableViewController.swift; sourceTree = "<group>"; };
 		0E792F5B20A02DD300152C94 /* NSRExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRExtensions.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		0E792F4020A0183400152C94 /* Family Tree iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E792F4120A0183400152C94 /* Family_Tree_iOSTests.swift */,
 				0E792F4320A0183400152C94 /* Info.plist */,
 			);
 			path = "Family Tree iOSTests";
@@ -257,7 +254,6 @@
 				0EA5298920A30D3500A7D876 /* NSRDataFetcher.swift in Sources */,
 				0EA5298A20A30D3500A7D876 /* NSRFamily.swift in Sources */,
 				0EA5298B20A30D3500A7D876 /* NSRTypes.swift in Sources */,
-				0E792F4220A0183400152C94 /* Family_Tree_iOSTests.swift in Sources */,
 				0EA5297E20A3082700A7D876 /* NSRConnectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
