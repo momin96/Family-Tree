@@ -18,18 +18,25 @@ class Family_Tree_iOSTests: XCTestCase {
     
     
     func testDataDownload() {
+        let expt : XCTestExpectation = expectation(description: "getRequest")
+        
         NSRDataFetcher.shared.getRequestData { (data, response, err) in
-
-   
             
-//
-//            XCTAssertNil(data == nil, "Data is nil")
-//            XCTAssertNotNil(data != nil, "Not nil")
+            expt.fulfill()
+            
+            let httpResponse = response as! HTTPURLResponse
+            print("httpResponse.statusCode \(httpResponse.statusCode)")
+           
+            XCTAssert(httpResponse.statusCode == 200, "Test passed")
+            
+            XCTAssertEqual(httpResponse.statusCode, 500)
+            
+            XCTAssert(httpResponse.statusCode != 200, "Testfailed")
+
         }
         
-//        let httpResponse = response as! HTTPURLResponse
-//        print("httpResponse.statusCode \(httpResponse.statusCode)")
-//        XCTAssert(httpResponse.statusCode != 500, "failed")
+        
+        wait(for: [expt], timeout: 2.0)
     }
     
     
