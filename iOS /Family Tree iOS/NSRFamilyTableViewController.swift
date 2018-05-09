@@ -10,6 +10,11 @@ import UIKit
 
 let HEADER_NIB = "headerNib"
 
+enum SortByItem: String {
+    case byName = "SortByName"
+    case byAge = "SortByAge"
+}
+
 /**
  TableViewController responsible for asking data from model layer & then displaying Family member's data in View layer.
  
@@ -127,21 +132,23 @@ extension NSRFamilyTableViewController: SortFamilyMemberProtocol {
      
      - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
      */
-   func sortByName(_ sender: Any) {
-    
+    func sortByName(_ sender: Any) {
+        
+        showArrowForButton(.byName)
+        
         let nameButton : UIButton = sender as! UIButton
-    
+        
         let ascending : Bool = nameButton.isSelected
         
         let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: ascending)
         
-        self.family?.updateChildren(sortedChildren)
+        reloadTableViewWithMember(sortedChildren)
         
-        self.familyTableView.reloadData()
-    
+        updateSortIconFor(button: nameButton, ascending: ascending)
+        
         nameButton.isSelected = !nameButton.isSelected
     }
-        
+    
     /**
      Performs sorting of instance of Member by their ages
      
@@ -149,16 +156,64 @@ extension NSRFamilyTableViewController: SortFamilyMemberProtocol {
      */
     func sortByAge(_ sender: Any) {
         
+        showArrowForButton(.byAge)
+        
         let ageButton : UIButton = sender as! UIButton
         
         let ascending : Bool = ageButton.isSelected
         
         let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: ascending)
         
-        self.family?.updateChildren(sortedChildren)
+        reloadTableViewWithMember(sortedChildren)
         
-        self.familyTableView.reloadData()
+        updateSortIconFor(button: ageButton, ascending: ascending)
         
         ageButton.isSelected = !ageButton.isSelected
+        
+    }
+    
+    // MARK: Helper functions
+    
+    /**
+     Update family's member's order & reloads table view with latest member's data
+     
+     - Parameter members: List of member whose position needs to be arranged after sorting
+     */
+    func reloadTableViewWithMember(_ sortedMember: [Member]?) {
+        self.family?.updateChildren(sortedMember)
+        self.familyTableView.reloadData()
+    }
+    
+    /**
+     Updates the arrow_up or arrow_down icon on currently selected button, by ascending or descending order
+     
+     - Parameter sender: Currently selected button whose icons will be updated
+     - Parameter ascending: Flag to indicate order is ascending or desending
+     */
+    func updateSortIconFor(button sender: UIButton, ascending: Bool) {
+        let image = UIImage(named: ascending ? "arrow_up" : "arrow_down")
+        let status : UIControlState = ascending ? .normal : .selected
+        sender.setImage(image, for: status)
+    }
+    
+    /**
+     Remove the arrow icon from other button other than current selected
+     
+     - Parameter item: Tell currently which button is selected
+     */
+    func showArrowForButton(_ item: SortByItem) {
+        
+        switch item {
+        case .byAge:
+            let nameSortButton = headerView?.nameSort
+            nameSortButton?.setImage(nil, for: .normal)
+            nameSortButton?.setImage(nil, for: .selected)
+            break
+        case .byName:
+            let ageSortButton = headerView?.ageSort
+            ageSortButton?.setImage(nil, for: .normal)
+            ageSortButton?.setImage(nil, for: .selected)
+            break
+        }
     }
 }
