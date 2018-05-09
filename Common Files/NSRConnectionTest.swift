@@ -8,8 +8,6 @@
 
 import XCTest
 
-class NSRConnectionTest: XCTestCase {
-    
 let jsonData = """
 {
 "name": "John Family",
@@ -20,6 +18,8 @@ let jsonData = """
 ]
 }
 """.data(using: .utf8)
+
+class NSRConnectionTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -61,19 +61,34 @@ let jsonData = """
         wait(for: [expt], timeout: 10.0)
     }
     
-    func testJSONParser() {
-        let family = NSRDataConstructor.parseJSONfrom(data: jsonData!)
-        
-        XCTAssertNil(family)
+    func testJSONParserPassCases() {
+        let family = getFamilyObject()
         
         XCTAssertNotNil(family)
         
+        XCTAssertNotNil(family?.name, "name object is nil")
+
+        XCTAssertNotNil(family?.children, "children object is nil")
+
+        XCTAssertTrue((family?.children?.count)! >= 1, "1 or more children in family")
+
+    }
+    
+    func testJSONParserFailCases() {
+        let family = getFamilyObject()
+        
+        XCTAssertNil(family)
+
         XCTAssertNil(family?.name, "name object is nil")
         
         XCTAssertNil(family?.children, "children object is nil")
         
-        XCTAssertEqual(family?.children?.count, 0, "Family has more 0 children")
-        
+        XCTAssertEqual(family?.children?.count, 0, "No children family")
+
+    }
+    
+    func getFamilyObject() -> Family? {
+        return NSRDataConstructor.parseJSONfrom(data: jsonData!)
     }
     
     func testPerformanceExample() {
