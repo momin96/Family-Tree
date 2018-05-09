@@ -9,6 +9,18 @@
 import XCTest
 @testable import Family_Tree_iOS
 
+
+let jsonData = """
+{
+"name": "John Family",
+"children": [
+{"name": "Samuel"},
+{"name": "Steve"},
+{"name": "Rahul"}
+]
+}
+""".data(using: .utf8)
+
 class Family_Tree_iOSTests: XCTestCase {
     
     override func setUp() {
@@ -22,21 +34,44 @@ class Family_Tree_iOSTests: XCTestCase {
         
         NSRDataFetcher.shared.getRequestData { (data, response, err) in
             
-            expt.fulfill()
             
             let httpResponse = response as! HTTPURLResponse
             print("httpResponse.statusCode \(httpResponse.statusCode)")
            
-            XCTAssert(httpResponse.statusCode == 200, "Test passed")
+            XCTAssertEqual(httpResponse.statusCode, 200)
             
             XCTAssertEqual(httpResponse.statusCode, 500)
             
             XCTAssert(httpResponse.statusCode != 200, "Testfailed")
-
+            
+            XCTAssertNil(data, "data is nil")
+            
+            XCTAssertNotNil(data, "data is not nil")
+            
+            XCTAssertNotNil(err, "Error is not nil")
+            
+            XCTAssertNil(err, "Error is nil")
+            
+            expt.fulfill()
         }
         
         
-        wait(for: [expt], timeout: 2.0)
+        wait(for: [expt], timeout: 10.0)
+    }
+    
+    func testJSONParser() {
+        let family = NSRDataConstructor.parseJSONfrom(data: jsonData!)
+        
+        XCTAssertNil(family)
+        
+        XCTAssertNotNil(family)
+        
+        XCTAssertNil(family?.name, "name object is nil")
+        
+        XCTAssertNil(family?.children, "children object is nil")
+        
+        XCTAssertEqual(family?.children?.count, 0, "Family has more 0 children")
+        
     }
     
     
