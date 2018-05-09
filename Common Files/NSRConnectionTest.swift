@@ -31,6 +31,7 @@ class NSRConnectionTest: XCTestCase {
         super.tearDown()
     }
     
+    /// All the cases in this function must be Pass
     func testDataFetchPassCases () {
         let expt : XCTestExpectation = expectation(description: "getRequest_PassCase")
         
@@ -53,6 +54,7 @@ class NSRConnectionTest: XCTestCase {
         wait(for: [expt], timeout: 10.0)
     }
     
+    /// All the cases in this function must be fail
     func testDataFetchFailCases (){
         
         let expt : XCTestExpectation = expectation(description: "getRequest_FailCase")
@@ -77,6 +79,7 @@ class NSRConnectionTest: XCTestCase {
     wait(for: [expt], timeout: 10.0)
     }
     
+    /// All the cases in this function must be Pass
     func testJSONParserPassCases() {
         let family = getFamilyObject()
         
@@ -89,7 +92,7 @@ class NSRConnectionTest: XCTestCase {
         XCTAssertTrue((family?.children?.count)! >= 1, "1 or more children in family")
 
     }
-    
+    /// All the cases in this function must be fail
     func testJSONParserFailCases() {
         let family = getFamilyObject()
         
