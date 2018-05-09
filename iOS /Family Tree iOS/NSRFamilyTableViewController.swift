@@ -8,10 +8,15 @@
 
 import UIKit
 
-let HEADER_NIB = "headerNib"
-
+/**
+ This enum tells currently selected button
+*/
 enum SortByItem: String {
+    
+    /// Button for sorting by name
     case byName = "SortByName"
+    
+    /// Button for sorting by age
     case byAge = "SortByAge"
 }
 
