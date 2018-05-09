@@ -33,4 +33,8 @@ struct SortStatus {
     static var byAge: Bool = true
 }
 
+@objc protocol SortFamilyMemberProtocol {
+    @objc optional func sortByName(_ sender: Any)
+    @objc optional func sortByAge(_ sender: Any)
+}
 
