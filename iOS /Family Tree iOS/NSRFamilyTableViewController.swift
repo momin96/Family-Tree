@@ -28,14 +28,14 @@ class NSRFamilyTableViewController: UITableViewController {
     // TableCell's unique identifier
     private let cellId = "childCell"
     
-    private var headerView: NSRTableHeaderView? = nil
+    private var headerView: NSRTableHeaderView?
     
     // MARK: View life Cycle
     deinit {
         print("deinit of NSRFamilyTableViewController")
     }
     
-    override func viewDidLoad() {        
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         registerHeaderNib()
@@ -80,35 +80,35 @@ class NSRFamilyTableViewController: UITableViewController {
      
      - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
      */
-    @IBAction func sortByName(_ sender : UIBarButtonItem) {
-        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
-        
-        let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: ascending)
-        
-        self.family?.updateChildren(sortedChildren)
-        
-        self.familyTableView.reloadData()
-        
-        sender.invert()
-    }
+//    @IBAction func sortByName(_ sender : UIBarButtonItem) {
+//        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
+//
+//        let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: ascending)
+//
+//        self.family?.updateChildren(sortedChildren)
+//
+//        self.familyTableView.reloadData()
+//
+//        sender.invert()
+//    }
     
     /**
      Performs sorting of instance of Member by their ages
      
      - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
      */
-    @IBAction func sortByAge(_ sender: UIBarButtonItem) {
-        
-        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
-        
-        let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: ascending)
-        
-        self.family?.updateChildren(sortedChildren)
-        
-        self.familyTableView.reloadData()
-        
-        sender.invert()
-    }
+//    @IBAction func sortByAge(_ sender: UIBarButtonItem) {
+//
+//        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
+//
+//        let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: ascending)
+//
+//        self.family?.updateChildren(sortedChildren)
+//
+//        self.familyTableView.reloadData()
+//
+//        sender.invert()
+//    }
 }
 
 /// Extension to seperate User interface implementation with contoller's logic
@@ -155,7 +155,52 @@ extension NSRFamilyTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
+        if headerView != nil {
+            return 60.0
+        }
+        return 0;
     }
+}
+
+extension NSRFamilyTableViewController: SortFamilyMemberProtocol {
     
+    /**
+     Performs sorting of instance of Member by their names
+     
+     - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
+     */
+   func sortByName(_ sender: Any) {
+    
+        let nameButton : UIButton = sender as! UIButton
+    
+        let ascending : Bool = nameButton.isSelected
+        
+        let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: ascending)
+        
+        self.family?.updateChildren(sortedChildren)
+        
+        self.familyTableView.reloadData()
+    
+        nameButton.isSelected = !nameButton.isSelected
+    }
+        
+    /**
+     Performs sorting of instance of Member by their ages
+     
+     - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
+     */
+    func sortByAge(_ sender: Any) {
+        
+        let ageButton : UIButton = sender as! UIButton
+        
+        let ascending : Bool = ageButton.isSelected
+        
+        let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: ascending)
+        
+        self.family?.updateChildren(sortedChildren)
+        
+        self.familyTableView.reloadData()
+        
+        ageButton.isSelected = !ageButton.isSelected
+    }
 }

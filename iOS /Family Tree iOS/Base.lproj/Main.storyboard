@@ -6,11 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Family Table View Controller-->
+        <!--Family Tree-->
         <scene sceneID="kIe-QS-3WJ">
             <objects>
                 <tableViewController id="W6n-Ti-hkw" customClass="NSRFamilyTableViewController" customModule="Family_Tree_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,20 +49,7 @@
                             <outlet property="delegate" destination="W6n-Ti-hkw" id="aHO-3K-bI7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aDu-HG-xxS">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Sort Age" id="64h-NC-L24">
-                                <connections>
-                                    <action selector="sortByAge:" destination="W6n-Ti-hkw" id="ERt-mi-cgI"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Sort Name" id="wjj-Yj-qBN">
-                                <connections>
-                                    <action selector="sortByName:" destination="W6n-Ti-hkw" id="OyC-Yj-FW7"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Family Tree" id="aDu-HG-xxS"/>
                     <connections>
                         <outlet property="familyTableView" destination="WsL-gr-4kP" id="25p-5W-TDY"/>
                     </connections>
