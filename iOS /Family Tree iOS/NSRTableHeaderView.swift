@@ -15,21 +15,17 @@ class NSRTableHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var nameSort: UIButton!
     @IBOutlet weak var ageSort: UIButton!
+    
+    var delegate: SortFamilyMemberProtocol?
 
     
-//    override func draw(_ rect: CGRect) {
-      /*
-        let nameRect: CGRect = CGRect(x: 0, y: headerTitle.bounds.height, width: self.bounds.width / 2, height: BUTTON_HEIGHT)
-        let ageRect: CGRect = CGRect(x: self.bounds.width / 2, y: headerTitle.bounds.height,, width: self.bounds.width / 2, height: BUTTON_HEIGHT) as!
-        
-        let nameButtonView = NSRHeaderButton(frame: nameRect)
-        self.addSubview(nameButtonView)
-        
-        
-        let ageButtonView = NSRHeaderButton(frame: ageRect)
-        self.addSubview(ageButtonView)
-        */
-//    }
+    @IBAction func sortByName(_ sender: UIButton) {
+        delegate?.sortByAge!(sender)
+    }
+    
+    @IBAction func sortByAge(_ sender: UIButton) {
+        delegate?.sortByAge!(sender)
+    }
 }
 
 
