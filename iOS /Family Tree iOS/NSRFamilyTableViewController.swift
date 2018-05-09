@@ -18,7 +18,7 @@ let HEADER_NIB = "headerNib"
  - Warning: This class cannot have custom User interface as it is derived from UITableViewController
  */
 class NSRFamilyTableViewController: UITableViewController {
-
+    
     /// Storyboard's connection to UITableView
     @IBOutlet weak var familyTableView: UITableView!
     
@@ -28,19 +28,22 @@ class NSRFamilyTableViewController: UITableViewController {
     // TableCell's unique identifier
     private let cellId = "childCell"
     
+    private var headerView: NSRTableHeaderView? = nil
+    
     // MARK: View life Cycle
     deinit {
         print("deinit of NSRFamilyTableViewController")
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad() {        
         super.viewDidLoad()
         
-        initiateFamilyDataConstruction()
-    
         registerHeaderNib()
+        
+        initiateFamilyDataConstruction()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("didReceiveMemoryWarning in NSRFamilyTableViewController")
@@ -65,9 +68,7 @@ class NSRFamilyTableViewController: UITableViewController {
      Register the table view header
      */
     func registerHeaderNib() {
-        let headerNib = UINib.init(nibName: "NSRTableHeaderView", bundle: nil)
-//        familyTableView.register(headerNib, forCellReuseIdentifier: HEADER_NIB)
-        familyTableView.register(NSRTableHeaderView.self, forHeaderFooterViewReuseIdentifier: HEADER_NIB)
+        headerView = Bundle.main.loadNibNamed("NSRTableHeaderView", owner: self, options: nil)?.first as? NSRTableHeaderView
     }
     
     
@@ -118,9 +119,9 @@ extension NSRFamilyTableViewController {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return family?.name
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return family?.name
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let c = family?.children {
@@ -146,20 +147,15 @@ extension NSRFamilyTableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        if let hdv = familyTableView.dequeueReusableHeaderFooterView(withIdentifier: HEADER_NIB) {
-//            let headerView = hdv as! NSRTableHeaderView
-//            if let f = family, let n = f.name {
-////                headerView.headerTitle.text = n
-//            }
-//            return headerView
-//        }
-//        return nil
-//    }
-//
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 50.0
-//    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let f = family, let n = f.name {
+            headerView?.headerTitle.text = n
+        }
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
     
 }
