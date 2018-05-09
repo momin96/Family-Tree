@@ -71,44 +71,6 @@ class NSRFamilyTableViewController: UITableViewController {
         headerView = Bundle.main.loadNibNamed("NSRTableHeaderView", owner: self, options: nil)?.first as? NSRTableHeaderView
     }
     
-    
-    
-    // MARK: Target Action methods
-    
-    /**
-     Performs sorting of instance of Member by their names
-     
-     - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
-     */
-//    @IBAction func sortByName(_ sender : UIBarButtonItem) {
-//        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
-//
-//        let sortedChildren = self.family?.sortFamilyMemberbyName(ascending: ascending)
-//
-//        self.family?.updateChildren(sortedChildren)
-//
-//        self.familyTableView.reloadData()
-//
-//        sender.invert()
-//    }
-    
-    /**
-     Performs sorting of instance of Member by their ages
-     
-     - Parameter sender: Instance of UIBarButtonItem which keeps state of order of sorting, eg: Ascending or Descending
-     */
-//    @IBAction func sortByAge(_ sender: UIBarButtonItem) {
-//
-//        let ascending : Bool = sender.toggleState == ToggleState.OFF ? false : true
-//
-//        let sortedChildren = self.family?.sortFamilyMemberByAge(ascending: ascending)
-//
-//        self.family?.updateChildren(sortedChildren)
-//
-//        self.familyTableView.reloadData()
-//
-//        sender.invert()
-//    }
 }
 
 /// Extension to seperate User interface implementation with contoller's logic
@@ -118,10 +80,6 @@ extension NSRFamilyTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return family?.name
-//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let c = family?.children {
