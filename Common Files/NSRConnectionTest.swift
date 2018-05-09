@@ -31,8 +31,8 @@ class NSRConnectionTest: XCTestCase {
         super.tearDown()
     }
     
-    func testDataDownload() {
-        let expt : XCTestExpectation = expectation(description: "getRequest")
+    func testDataFetchPassCases () {
+        let expt : XCTestExpectation = expectation(description: "getRequest_PassCase")
         
         NSRDataFetcher.shared.getRequestData { (data, response, err) in
             
@@ -40,17 +40,9 @@ class NSRConnectionTest: XCTestCase {
             let httpResponse = response as! HTTPURLResponse
             print("httpResponse.statusCode \(httpResponse.statusCode)")
             
-            XCTAssertEqual(httpResponse.statusCode, 200)
-            
-            XCTAssertEqual(httpResponse.statusCode, 500)
-            
-            XCTAssert(httpResponse.statusCode != 200, "Testfailed")
-            
-            XCTAssertNil(data, "data is nil")
+            XCTAssertEqual(httpResponse.statusCode, 200, "Status code 200, Data received successfully")
             
             XCTAssertNotNil(data, "data is not nil")
-            
-            XCTAssertNotNil(err, "Error is not nil")
             
             XCTAssertNil(err, "Error is nil")
             
@@ -59,6 +51,30 @@ class NSRConnectionTest: XCTestCase {
         
         
         wait(for: [expt], timeout: 10.0)
+    }
+    
+    func testDataFetchFailCases (){
+        
+        let expt : XCTestExpectation = expectation(description: "getRequest_FailCase")
+        
+        NSRDataFetcher.shared.getRequestData { (data, response, err) in
+        
+        
+        let httpResponse = response as! HTTPURLResponse
+        print("httpResponse.statusCode \(httpResponse.statusCode)")
+        
+        
+        XCTAssertEqual(httpResponse.statusCode, 500, "Status code 500, Dint received Data")
+        
+        XCTAssertNil(data, "data is nil")
+        
+        XCTAssertNotNil(err, "Error is not nil")
+        
+        expt.fulfill()
+    }
+    
+    
+    wait(for: [expt], timeout: 10.0)
     }
     
     func testJSONParserPassCases() {
