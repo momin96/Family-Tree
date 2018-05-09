@@ -20,6 +20,11 @@
 		0E792F4220A0183400152C94 /* Family_Tree_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F4120A0183400152C94 /* Family_Tree_iOSTests.swift */; };
 		0E792F5320A01A2600152C94 /* NSRFamilyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */; };
 		0E792F5D20A02DD400152C94 /* NSRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5B20A02DD300152C94 /* NSRExtensions.swift */; };
+		0EA5297E20A3082700A7D876 /* NSRConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5297D20A3082700A7D876 /* NSRConnectionTest.swift */; };
+		0EA5298820A30D3500A7D876 /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4720A19047008D075F /* NSRDataConstructor.swift */; };
+		0EA5298920A30D3500A7D876 /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4520A19047008D075F /* NSRDataFetcher.swift */; };
+		0EA5298A20A30D3500A7D876 /* NSRFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4420A19047008D075F /* NSRFamily.swift */; };
+		0EA5298B20A30D3500A7D876 /* NSRTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4620A19047008D075F /* NSRTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,7 @@
 		0E792F4320A0183400152C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRFamilyTableViewController.swift; sourceTree = "<group>"; };
 		0E792F5B20A02DD300152C94 /* NSRExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRExtensions.swift; sourceTree = "<group>"; };
+		0EA5297D20A3082700A7D876 /* NSRConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRConnectionTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 				0E6FAE4520A19047008D075F /* NSRDataFetcher.swift */,
 				0E6FAE4420A19047008D075F /* NSRFamily.swift */,
 				0E6FAE4620A19047008D075F /* NSRTypes.swift */,
+				0EA5297D20A3082700A7D876 /* NSRConnectionTest.swift */,
 			);
 			name = "Common Files";
 			path = "../Common Files";
@@ -246,7 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA5298820A30D3500A7D876 /* NSRDataConstructor.swift in Sources */,
+				0EA5298920A30D3500A7D876 /* NSRDataFetcher.swift in Sources */,
+				0EA5298A20A30D3500A7D876 /* NSRFamily.swift in Sources */,
+				0EA5298B20A30D3500A7D876 /* NSRTypes.swift in Sources */,
 				0E792F4220A0183400152C94 /* Family_Tree_iOSTests.swift in Sources */,
+				0EA5297E20A3082700A7D876 /* NSRConnectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

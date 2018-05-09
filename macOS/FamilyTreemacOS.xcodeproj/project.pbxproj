@@ -12,11 +12,15 @@
 		0E6FAE5220A19085008D075F /* NSRTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4E20A19084008D075F /* NSRTypes.swift */; };
 		0E6FAE5320A19085008D075F /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4F20A19084008D075F /* NSRDataConstructor.swift */; };
 		0E792F5920A02D7F00152C94 /* NSRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5820A02D7F00152C94 /* NSRExtensions.swift */; };
+		0EA5298320A30D1E00A7D876 /* NSRConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5298220A30D1E00A7D876 /* NSRConnectionTest.swift */; };
+		0EA5298420A30D2C00A7D876 /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4F20A19084008D075F /* NSRDataConstructor.swift */; };
+		0EA5298520A30D2C00A7D876 /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4D20A19084008D075F /* NSRDataFetcher.swift */; };
+		0EA5298620A30D2C00A7D876 /* NSRFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4C20A19084008D075F /* NSRFamily.swift */; };
+		0EA5298720A30D2C00A7D876 /* NSRTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4E20A19084008D075F /* NSRTypes.swift */; };
 		0EB20E17209C0FE70053FEAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB20E16209C0FE70053FEAB /* AppDelegate.swift */; };
 		0EB20E19209C0FE70053FEAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB20E18209C0FE70053FEAB /* ViewController.swift */; };
 		0EB20E1B209C0FE70053FEAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB20E1A209C0FE70053FEAB /* Assets.xcassets */; };
 		0EB20E1E209C0FE70053FEAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB20E1C209C0FE70053FEAB /* Main.storyboard */; };
-		0EB20E2A209C0FE70053FEAB /* FamilyTreemacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB20E29209C0FE70053FEAB /* FamilyTreemacOSTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 		0E6FAE4E20A19084008D075F /* NSRTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRTypes.swift; path = "../Common Files/NSRTypes.swift"; sourceTree = "<group>"; };
 		0E6FAE4F20A19084008D075F /* NSRDataConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRDataConstructor.swift; path = "../Common Files/NSRDataConstructor.swift"; sourceTree = "<group>"; };
 		0E792F5820A02D7F00152C94 /* NSRExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRExtensions.swift; sourceTree = "<group>"; };
+		0EA5298220A30D1E00A7D876 /* NSRConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRConnectionTest.swift; path = "../Common Files/NSRConnectionTest.swift"; sourceTree = "<group>"; };
 		0EB20E13209C0FE70053FEAB /* FamilyTreemacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyTreemacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB20E16209C0FE70053FEAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB20E18209C0FE70053FEAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +48,6 @@
 		0EB20E1F209C0FE70053FEAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB20E20209C0FE70053FEAB /* FamilyTreemacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FamilyTreemacOS.entitlements; sourceTree = "<group>"; };
 		0EB20E25209C0FE70053FEAB /* FamilyTreemacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamilyTreemacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EB20E29209C0FE70053FEAB /* FamilyTreemacOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTreemacOSTests.swift; sourceTree = "<group>"; };
 		0EB20E2B209C0FE80053FEAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,7 @@
 				0E6FAE4D20A19084008D075F /* NSRDataFetcher.swift */,
 				0E6FAE4C20A19084008D075F /* NSRFamily.swift */,
 				0E6FAE4E20A19084008D075F /* NSRTypes.swift */,
+				0EA5298220A30D1E00A7D876 /* NSRConnectionTest.swift */,
 			);
 			name = "Common Files";
 			sourceTree = "<group>";
@@ -112,7 +117,6 @@
 		0EB20E28209C0FE70053FEAB /* FamilyTreemacOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				0EB20E29209C0FE70053FEAB /* FamilyTreemacOSTests.swift */,
 				0EB20E2B209C0FE80053FEAB /* Info.plist */,
 			);
 			path = FamilyTreemacOSTests;
@@ -173,6 +177,7 @@
 					};
 					0EB20E24209C0FE70053FEAB = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0EB20E12209C0FE70053FEAB;
 					};
@@ -235,7 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EB20E2A209C0FE70053FEAB /* FamilyTreemacOSTests.swift in Sources */,
+				0EA5298420A30D2C00A7D876 /* NSRDataConstructor.swift in Sources */,
+				0EA5298520A30D2C00A7D876 /* NSRDataFetcher.swift in Sources */,
+				0EA5298620A30D2C00A7D876 /* NSRFamily.swift in Sources */,
+				0EA5298720A30D2C00A7D876 /* NSRTypes.swift in Sources */,
+				0EA5298320A30D1E00A7D876 /* NSRConnectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,12 +411,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FamilyTreemacOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exilant.FamilyTreemacOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamilyTreemacOS.app/Contents/MacOS/FamilyTreemacOS";
 			};
@@ -418,6 +429,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FamilyTreemacOSTests/Info.plist;
