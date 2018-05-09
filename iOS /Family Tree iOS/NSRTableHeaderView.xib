@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NSRTableHeaderView" customModule="Family_Tree_iOS" customModuleProvider="target">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="NSRTableHeaderView" customModule="Family_Tree_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -55,7 +55,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="M3z-s0-Xtw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="1Nf-Zo-hFS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xr9-Jp-NSt" secondAttribute="trailing" constant="10" id="1sM-j1-zs2"/>
@@ -74,25 +74,6 @@
                 <outlet property="nameSort" destination="oaH-oC-HnG" id="EbF-gW-546"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="-246"/>
-        </view>
-        <view contentMode="scaleToFill" id="kvv-d5-7CZ" customClass="NSRHeaderButton" customModule="Family_Tree_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="130" height="55"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-0x-1K5">
-                    <rect key="frame" x="95" y="12" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndw-sO-9nB">
-                    <rect key="frame" x="0.0" y="9" width="120" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Name"/>
-                </button>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="csa-D9-ZAA"/>
-            <point key="canvasLocation" x="-51" y="-52.5"/>
         </view>
     </objects>
     <resources>
