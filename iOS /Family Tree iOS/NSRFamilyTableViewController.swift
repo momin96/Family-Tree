@@ -8,6 +8,8 @@
 
 import UIKit
 
+let TABLE_HEADER_HEIGHT = CGFloat(60.0)
+
 /**
  This enum tells currently selected button
 */
@@ -124,7 +126,7 @@ extension NSRFamilyTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if headerView != nil {
-            return 60.0
+            return TABLE_HEADER_HEIGHT
         }
         return 0;
     }
