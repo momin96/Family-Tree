@@ -11,7 +11,6 @@
 		0E6FAE5120A19085008D075F /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4D20A19084008D075F /* NSRDataFetcher.swift */; };
 		0E6FAE5220A19085008D075F /* NSRTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4E20A19084008D075F /* NSRTypes.swift */; };
 		0E6FAE5320A19085008D075F /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4F20A19084008D075F /* NSRDataConstructor.swift */; };
-		0E792F5920A02D7F00152C94 /* NSRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5820A02D7F00152C94 /* NSRExtensions.swift */; };
 		0EA5298320A30D1E00A7D876 /* NSRConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5298220A30D1E00A7D876 /* NSRConnectionTest.swift */; };
 		0EA5298420A30D2C00A7D876 /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4F20A19084008D075F /* NSRDataConstructor.swift */; };
 		0EA5298520A30D2C00A7D876 /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4D20A19084008D075F /* NSRDataFetcher.swift */; };
@@ -38,7 +37,6 @@
 		0E6FAE4D20A19084008D075F /* NSRDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRDataFetcher.swift; path = "../Common Files/NSRDataFetcher.swift"; sourceTree = "<group>"; };
 		0E6FAE4E20A19084008D075F /* NSRTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRTypes.swift; path = "../Common Files/NSRTypes.swift"; sourceTree = "<group>"; };
 		0E6FAE4F20A19084008D075F /* NSRDataConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRDataConstructor.swift; path = "../Common Files/NSRDataConstructor.swift"; sourceTree = "<group>"; };
-		0E792F5820A02D7F00152C94 /* NSRExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRExtensions.swift; sourceTree = "<group>"; };
 		0EA5298220A30D1E00A7D876 /* NSRConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSRConnectionTest.swift; path = "../Common Files/NSRConnectionTest.swift"; sourceTree = "<group>"; };
 		0EB20E13209C0FE70053FEAB /* FamilyTreemacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyTreemacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB20E16209C0FE70053FEAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			children = (
 				0EB20E16209C0FE70053FEAB /* AppDelegate.swift */,
 				0EB20E18209C0FE70053FEAB /* ViewController.swift */,
-				0E792F5820A02D7F00152C94 /* NSRExtensions.swift */,
 				0EB20E1A209C0FE70053FEAB /* Assets.xcassets */,
 				0EB20E1C209C0FE70053FEAB /* Main.storyboard */,
 				0EB20E1F209C0FE70053FEAB /* Info.plist */,
@@ -228,7 +225,6 @@
 			files = (
 				0E6FAE5220A19085008D075F /* NSRTypes.swift in Sources */,
 				0EB20E19209C0FE70053FEAB /* ViewController.swift in Sources */,
-				0E792F5920A02D7F00152C94 /* NSRExtensions.swift in Sources */,
 				0EB20E17209C0FE70053FEAB /* AppDelegate.swift in Sources */,
 				0E6FAE5320A19085008D075F /* NSRDataConstructor.swift in Sources */,
 				0E6FAE5020A19085008D075F /* NSRFamily.swift in Sources */,

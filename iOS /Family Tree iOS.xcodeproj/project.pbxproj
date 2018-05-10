@@ -18,7 +18,6 @@
 		0E792F3420A0183400152C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3320A0183400152C94 /* Assets.xcassets */; };
 		0E792F3720A0183400152C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E792F3520A0183400152C94 /* LaunchScreen.storyboard */; };
 		0E792F5320A01A2600152C94 /* NSRFamilyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */; };
-		0E792F5D20A02DD400152C94 /* NSRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E792F5B20A02DD300152C94 /* NSRExtensions.swift */; };
 		0EA5297E20A3082700A7D876 /* NSRConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5297D20A3082700A7D876 /* NSRConnectionTest.swift */; };
 		0EA5298820A30D3500A7D876 /* NSRDataConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4720A19047008D075F /* NSRDataConstructor.swift */; };
 		0EA5298920A30D3500A7D876 /* NSRDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FAE4520A19047008D075F /* NSRDataFetcher.swift */; };
@@ -52,7 +51,6 @@
 		0E792F3D20A0183400152C94 /* Family Tree iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Family Tree iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E792F4320A0183400152C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRFamilyTableViewController.swift; sourceTree = "<group>"; };
-		0E792F5B20A02DD300152C94 /* NSRExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRExtensions.swift; sourceTree = "<group>"; };
 		0EA5297D20A3082700A7D876 /* NSRConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRConnectionTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 				0E792F5220A01A2600152C94 /* NSRFamilyTableViewController.swift */,
 				0E6FAE5420A1BFA3008D075F /* NSRTableHeaderView.swift */,
 				0E6FAE5620A1BFBF008D075F /* NSRTableHeaderView.xib */,
-				0E792F5B20A02DD300152C94 /* NSRExtensions.swift */,
 				0E792F3320A0183400152C94 /* Assets.xcassets */,
 				0E792F3520A0183400152C94 /* LaunchScreen.storyboard */,
 				0E792F3820A0183400152C94 /* Info.plist */,
@@ -240,7 +237,6 @@
 				0E6FAE5520A1BFA3008D075F /* NSRTableHeaderView.swift in Sources */,
 				0E6FAE4A20A19047008D075F /* NSRTypes.swift in Sources */,
 				0E6FAE4B20A19047008D075F /* NSRDataConstructor.swift in Sources */,
-				0E792F5D20A02DD400152C94 /* NSRExtensions.swift in Sources */,
 				0E792F5320A01A2600152C94 /* NSRFamilyTableViewController.swift in Sources */,
 				0E792F2D20A0183400152C94 /* AppDelegate.swift in Sources */,
 			);
